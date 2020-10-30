@@ -1,0 +1,50 @@
+﻿<Project Sdk="Microsoft.NET.Sdk.WindowsDesktop">
+
+  <PropertyGroup>
+    <OutputType>Library</OutputType>
+    <UseWindowsForms>true</UseWindowsForms>
+    <UseWpf>true</UseWpf>
+    <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+    <RunAnalyzersDuringBuild>false</RunAnalyzersDuringBuild>
+    <RunAnalyzersDuringLiveAnalysis>false</RunAnalyzersDuringLiveAnalysis>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <None Remove="ApplicationInsights.config" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Content Include="ApplicationInsights.config">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="AppInsights.WindowsDesktop" Version="$(AppInsightsWindowsDesktopVersion)" />
+    <PackageReference Include="Microsoft-WindowsAPICodePack-Core" Version="1.1.4" />
+    <PackageReference Include="Microsoft-WindowsAPICodePack-Shell" Version="1.1.4" />
+    <PackageReference Include="System.IO.Abstractions" Version="$(SystemIOAbstractionsVersion)" />
+    <PackageReference Include="System.Reactive" Version="$(SystemReactiveVersion)" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\Externals\conemu-inside\ConEmuWinForms\ConEmuWinForms.csproj" />
+    <ProjectReference Include="..\Externals\Git.hub\Git.hub\Git.hub.csproj" />
+    <ProjectReference Include="..\Externals\ICSharpCode.TextEditor\Project\ICSharpCode.TextEditor.csproj" />
+    <ProjectReference Include="..\Externals\NetSpell.SpellChecker\SpellChecker.csproj" />
+    <ProjectReference Include="..\Externals\PSTaskDialog\PSTaskDialog.csproj" />
+    <ProjectReference Include="..\GitCommands\GitCommands.csproj" />
+    <ProjectReference Include="..\GitExtUtils\GitExtUtils.csproj" />
+    <ProjectReference Include="..\Plugins\GitUIPluginInterfaces\GitUIPluginInterfaces.csproj" />
+    <ProjectReference Include="..\ResourceManager\ResourceManager.csproj" />
+  </ItemGroup>
+
+  <Target Name="CopyTranslations" AfterTargets="AfterBuild">
+    <ItemGroup>
+      <Translations Include="$(ProjectDir)Translation\*.xlf;$(ProjectDir)Translation\*.gif" />
+    </ItemGroup>
+    <Copy SourceFiles="@(Translations)" DestinationFolder="$(TargetDir)Translation" ContinueOnError="false" />
+  </Target>
+
+</Project>
+
