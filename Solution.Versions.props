@@ -15,7 +15,7 @@
     <SystemCollectionsImmutableVersion>1.7.1</SystemCollectionsImmutableVersion>
     <SystemIOAbstractionsVersion>11.0.6</SystemIOAbstractionsVersion>
     <SystemIOAbstractionsTestingHelpersVersion>11.0.6</SystemIOAbstractionsTestingHelpersVersion>
-    <SystemReactiveVersion>4.4.1</SystemReactiveVersion>
+    <SystemReactiveVersion>5.0.0</SystemReactiveVersion>
     <SystemRuntimeInteropServicesRuntimeInformationVersion>4.3.0</SystemRuntimeInteropServicesRuntimeInformationVersion>
     <SystemValueTupleVersion>4.5.0</SystemValueTupleVersion>
 
