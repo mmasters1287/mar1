@@ -22,7 +22,7 @@
     <!-- Test infra -->
     <ApprovalTestsVersion Condition="'$(ApprovalTestsVersion)' == ''">4.4.0</ApprovalTestsVersion>
     <FluentAssertionsVersion Condition="'$(FluentAssertionsVersion)' == ''">5.10.3</FluentAssertionsVersion>
-    <MicrosoftNETTestSdkVersion Condition="'$(MicrosoftNETTestSdkVersion)' == ''">16.6.1</MicrosoftNETTestSdkVersion>
+    <MicrosoftNETTestSdkVersion Condition="'$(MicrosoftNETTestSdkVersion)' == ''">16.8.3</MicrosoftNETTestSdkVersion>
     <NSubstituteVersion Condition="'$(NSubstituteVersion)' == ''">4.2.1 </NSubstituteVersion>
     <OpenCoverVersion Condition="'$(OpenCoverVersion)' == ''">4.7.922</OpenCoverVersion>
     <NUnitConsoleRunnerVersion Condition="'$(NUnitConsoleRunnerVersion)' == ''">3.11.1</NUnitConsoleRunnerVersion>
